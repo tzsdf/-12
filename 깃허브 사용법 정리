@@ -1,0 +1,98 @@
+Git
+git? github?
+
+git : 프로그램 등의 소스코드 관리를 위한 분산 버전 관리 시스템이다.
+
+코드를 저장해준다.
+
+이전 상태로 되돌려준다.(= 버전관리)
+
+협업을 할 수 있게 도와준다.
+
+github : git을 사용하는 프로젝트를 지원하는 웹호스팅 서비스로 쉽게 말해 오픈소스 코드 저장소라 할 수 있다.
+
+git동작 구조
+
+
+
+git init으로 프로젝트를 처음에 초기화 해준다.
+
+git add로 staging area에 추가해준다.
+
+git commit으로 로컬 레포지토리로 저장해준다.
+
+git checkout으로 특정 지점으로 이동할 수 있다.
+
+git push와 git pull로 github 레포지토리로 올리거나 불러올 수 있다.
+
+##git 설치하기
+
+git --version명령어를 쳐서 git이 깔려있지 않다면 git을 설치해야한다.
+
+window
+
+https://www.git-scm.com/에서 git을 다운로드 후 설치
+mac
+
+터미널에서 brew install git명령어를 입력 후 설치
+github 시작하기 (vs code)
+https://github.com/에서 sign up하기
+
+username : 별명같은 것 (로그인할때 사용가능)
+email
+password
+new버튼으로 새로운 repository를 생성한다.
+
+Repository name : 레포지토리 이름을 써준다.
+Description : 레포에 대한 간략한 설명을 써준다.
+Public or Private : Pirvate는 원래 유료였지만 학교인증을 하면 무료이다.
+initialize this repository with a README : README파일을 만들어주냐 마느냐 선택지 README파일은 코드에 대한 설명서라고 생각하면 된다.
+git init - 로컬 저장소를 생성
+
+git add . - staging area로 파일 저장하기
+
+git commit -m "first" - "first"라는 보조메시지와 로컬레포에 커밋하기
+
+git remote add origin github주소 - github의 주소로 remote하기
+
+git push -u origin master - push로 github에 올리기
+
+github 레포에 올리기 완료!
+
+간단한 branch 활용하기
+브랜치란 독립적으로 어떤 작업을 진행하기 위한 개념으로 각각의 브랜치에 영향을 미치지 않으며 여러작업을 동시에 할 수 있다.
+
+예를들자면, 서버를 돌리는 브랜치, 기능을 개발하는 브랜치와 버그를 수정하는 브랜치 세개를 두면 서버를 돌리면서 서버에는 영향을 미치지 않고 기능을 개발할 수 있고 버그가 발생했을 시에는 버그를 수정하는 브랜치에서 버그를 수정하고 merge를 함으로서 버그를 고칠 수 있다.
+
+처음에 레포를 만들면 master라는 이름의 브랜치를 가지게 된다.
+git branch hong으로 'hong'이라는 브랜치를 만든다.
+git checkout hong 로 'master' -> 'hong'으로 브랜치 전환하기
+이제 master브랜치와는 별개로 add,commit,push를 할 수 있다.
+git push origin hong로 푸쉬를 할 수 있다.
+푸쉬를 해주면 깃헙에서 pull request를 보낼 수 있다.
+그럼 master랑 자동으로 merge를 해준다.
+충돌이 일어날 경우에는 직접 수정을 해주면 된다.
+Merge
+
+merge를 통해 브랜치들을 병합할 수 있다.
+
+git merge <commit> 이 명령어를 통해 지정한 커밋이 현재 가리키는 커밋에 넣을 수 있다.
+
+병합과정에서 자동병합에 실패하면 CONFLICT가 발생한다.
+
+충돌이 발생하면 터미널에 어느파일에서 충돌이 나는지 알려준다.
+
+그럼 그 파일을 열어서 수정을 해줘야한다.
+
+<<<<<<< HEAD
+블라블라
+=======
+블라블라라
+>>>>>>> <commit>
+블라블라
+블라블라라
+위의 파일을 아래처럼 수정을 해주고 다시 commit을 해준다.
+
+End
+참고 사이트
+
